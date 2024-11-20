@@ -10,8 +10,10 @@
 }
 
 /* COLORS */
+/* COLORS */
 * {
   font-family: "Red Hat Display", sans-serif;
+  box-sizing: border-box;
 }
 
 .t1 {
@@ -44,7 +46,7 @@
   font-weight: 500;
   line-height: 110%;
   letter-spacing: 0;
-  color: #28283D;
+  color: #87879D;
 }
 
 .t5 {
@@ -53,6 +55,68 @@
   line-height: 150%;
   letter-spacing: 0;
   color: #28283D;
+}
+
+.button-blue {
+  padding: 1rem 2.5rem;
+  background: #4D96A9;
+  color: #FAFAFA;
+  border: none;
+  border-radius: 1.8125rem;
+}
+
+.button-purple {
+  padding: 1rem 2.5rem;
+  background: #855FB1;
+  color: #FAFAFA;
+  border: none;
+  border-radius: 1.8125rem;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+.logo-top {
+  height: 6.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.logo-top img {
+  margin: 0 auto;
+}
+
+header {
+  width: 103vw;
+  min-height: 30.5rem;
+  margin-left: -2vw;
+  padding: 4rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6.115625rem;
+}
+header div {
+  max-width: 28rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 2rem;
+}
+header div > * {
+  margin: 0;
+}
+
+.version {
+  font-weight: 500;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
 }
 
 /*# sourceMappingURL=/main.77bb5cfd.css.map */
