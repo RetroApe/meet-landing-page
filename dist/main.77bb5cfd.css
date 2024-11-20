@@ -9,10 +9,7 @@
   color: hsl(228, 45%, 44%);
 }
 
-:root {
-  /* COLORS */
-}
-
+/* COLORS */
 * {
   font-family: "Red Hat Display", sans-serif;
 }
@@ -22,6 +19,7 @@
   font-weight: 900;
   line-height: 110%;
   letter-spacing: 0;
+  color: #28283D;
 }
 
 .t2 {
@@ -29,6 +27,7 @@
   font-weight: 900;
   line-height: 110%;
   letter-spacing: 0;
+  color: #28283D;
 }
 
 .t3 {
@@ -36,6 +35,7 @@
   font-weight: 900;
   line-height: 110%;
   letter-spacing: 0.25rem;
+  color: #4D96A9;
   text-transform: uppercase;
 }
 
@@ -44,6 +44,7 @@
   font-weight: 500;
   line-height: 110%;
   letter-spacing: 0;
+  color: #28283D;
 }
 
 .t5 {
@@ -51,6 +52,7 @@
   font-weight: 900;
   line-height: 150%;
   letter-spacing: 0;
+  color: #28283D;
 }
 
 /*# sourceMappingURL=/main.77bb5cfd.css.map */
