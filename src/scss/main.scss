@@ -1,5 +1,81 @@
-$blue: blue;
+.attribution { font-size: 11px; text-align: center; margin-bottom: 1rem}
+.attribution a { color: hsl(228, 45%, 44%); }
 
-body {
-    background: $blue;
+@import url(https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap);
+
+:root {
+
+    /* COLORS */
+    $cyan-600: #4D96A9;
+    $cyan-300: #8FE3F9;
+    $purple-600: #855FB1;
+    $purple-300: #D9B8FF;
+
+    $slate-900: #28283D;
+    $slate-600: #87879D;
+    $slate-300: #D1D1DF;
+    $white: #FAFAFA;
+
+    
 }
+
+* {
+    font-family: "Red Hat Display", sans-serif;
+}
+
+
+@mixin set-text-preset($size: 1rem, $weight: 900, $height: 110%, $spacing: 0) {
+    
+    font-size: $size;
+    font-weight: $weight;
+    line-height: $height;
+    letter-spacing: $spacing;
+}
+
+@mixin text-preset-1() {
+    @include set-text-preset($size: 4rem);
+    color: $slate-900;
+}
+
+@mixin text-preset-2() {
+    @include set-text-preset($size: 2.5rem);
+    color: $slate-900;
+}
+
+@mixin text-preset-3() {
+    @include set-text-preset($spacing: 0.25rem);
+    color: $cyan-600;
+    text-transform: uppercase;
+}
+
+@mixin text-preset-4() {
+    @include set-text-preset($size: 1.125rem, $weight: 500);
+    color: $slate-900;
+}
+
+@mixin text-preset-5() {
+    @include set-text-preset($height: 150%);
+    color: $slate-900;
+}
+
+
+.t1 {
+    @include text-preset-1()
+}
+
+.t2 {
+    @include text-preset-2()
+}
+
+.t3 {
+    @include text-preset-3()
+}
+
+.t4 {
+    @include text-preset-4()
+}
+
+.t5 {
+    @include text-preset-5()
+}
+
