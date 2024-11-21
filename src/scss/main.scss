@@ -46,12 +46,12 @@ $white: #FAFAFA;
 }
 
 @mixin text-preset-4() {
-    @include set-text-preset($size: 1.125rem, $weight: 500);
+    @include set-text-preset($size: 1.125rem, $weight: 500, $height: 150%);
     color: $slate-600;
 }
 
 @mixin text-preset-5() {
-    @include set-text-preset($height: 150%);
+    @include set-text-preset();
     color: $slate-900;
 }
 
@@ -96,8 +96,12 @@ html {
     overflow-x: hidden;
 }
 
+body {
+    margin: 0;
+}
+
 .logo-top {
-    height: 6.75rem;
+    height: clamp(4.75rem, 2rem + 5.5vw, 6.75rem);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -107,17 +111,31 @@ html {
     }
 }
 
-header {
-    width: 103vw;
-    min-height: 30.5rem;
-    margin-left: -2vw;
-    padding: 4rem 0;
+  /*--------*/
+ /* HEADER */
+/*--------*/
 
+header {
+    // width: 100vw;
+    min-height: 30.5rem;
+    // margin-left: -2vw;
+    padding: 4rem 0;
+    // margin: 0;
+    overflow: hidden;
     
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 6.115625rem;
+
+    & .img1 {
+        align-self: flex-start;
+        margin-left: -2vw;
+    }
+
+    & .img2 {
+        align-self: flex-end;
+        margin-right: -2vw;
+    }
 
     & div {
         max-width: 28rem;
@@ -130,6 +148,50 @@ header {
         & > * {
             margin: 0;
         }
+
+        & h1.t1 {
+            font-size: clamp(3rem, 4vw + 1rem, 4rem);
+            max-width: 10ch;
+        }
+
+        & p.t4 {
+            
+            font-size: clamp(1rem, 1vw + 0.5rem, 1.125rem);
+            padding: 0 clamp(0rem, 4.7075rem - 10.77vw, 2.1875rem);
+            
+        }
+    }
+
+}
+
+@media screen and (max-width: 1200px) {
+    header {
+        flex-direction: column;
+        
+        justify-content: center;
+        
+        row-gap: clamp(3rem, 1.269rem + 7.3846vw, 4.5rem);
+
+        & .img2 {
+            display: none;
+        }
+
+        & .img1 {
+            content: url(/assets/tablet/image-hero.png);
+            align-self: center;
+            margin: 0;
+            max-inline-size: 110%;
+        }
+    }
+}
+
+@media screen and (max-width: 700px) {
+    header {
+        padding-bottom: clamp(2rem, -0.3077rem + 9.846vw, 4rem);
+
+        & div h1.t1     {
+            font-size: clamp(2.5rem, 1.923rem + 2.4615vw, 3rem);
+        }
     }
 }
 
@@ -141,4 +203,22 @@ header {
     display: flex;
     flex-direction: row;
     gap: 1rem;
+}
+
+@media screen and (max-width: 400px) {
+    .buttons {
+        flex-direction: column;
+    }
+}
+
+  /*-----*/
+ /* END */
+/*-----*/
+
+  /*------*/
+ /* BODY */
+/*------*/
+
+body img {
+    max-inline-size: 100%;
 }
