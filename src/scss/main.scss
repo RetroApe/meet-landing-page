@@ -15,9 +15,14 @@ $slate-300: #D1D1DF;
 $white: #FAFAFA;
 /* COLORS */
 
-* {
-    font-family: "Red Hat Display", sans-serif;
+html {
+    overflow-x: hidden;
     box-sizing: border-box;
+}
+
+*, *::after, *::before {
+    font-family: "Red Hat Display", sans-serif;
+    box-sizing: inherit;
 }
 
 
@@ -92,8 +97,33 @@ $white: #FAFAFA;
      @include button(1rem 2.5rem, $purple-600, $white)
 }
 
-html {
-    overflow-x: hidden;
+.number {
+    width: 3.5rem;
+    height: 3.5rem;
+    border: 1px solid $cyan-300;
+    border-radius: 50%;
+    color: $slate-600;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    margin: 80px 0 0 0;
+
+    position: relative;
+
+    &::before {
+        content: "";
+        width: 1px;
+        height: 80px;
+        border: 1px solid $slate-300;
+
+        position: absolute;
+        top: 0;
+        transform-origin: top;
+        transform: scale(-1);
+    }
+
 }
 
 body {
@@ -216,9 +246,81 @@ header {
 /*-----*/
 
   /*------*/
- /* BODY */
+ /* MAIN */
 /*------*/
 
-body img {
-    max-inline-size: 100%;
+
+main {
+    margin-top: clamp(2rem, 0.5687rem + 6.1vw, 3.5rem);
+    margin-bottom: clamp(4rem, 3.42857rem + 1.19vw, 4.5rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 4rem;
+
+}
+
+.image-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: clamp(1.5rem, 0.9286rem + 1.19vw,2rem);
+
+    // max-width: 42.5rem;
+
+    // transition: flex-wrap 0.5s ease-in-out;
+
+    & img {
+        max-width: clamp(10rem, 3.14286rem + 14.2857vw, 16rem);
+        border-radius: 0.5rem;
+        // max-width: 100%;
+        }
+}
+
+.text-block {
+    max-width: clamp(31.5rem, 28.642rem + 5.952vw, 34rem);
+    text-align: center;
+
+    & p.t3 {
+        font-size: clamp(0.875rem, 0.732rem + 0.2976vw, 1rem);
+    }
+
+    & h2 {
+        box-sizing: content-box;
+        max-width: 15ch;
+        margin: 1rem auto 2rem auto;
+        text-align: center;
+
+        font-size: clamp(2rem, 1.42857rem + 1.19vw,2.5rem);
+    }
+
+    & p.t4 {
+        font-size: clamp(1rem, 0.8571rem + 0.2976vw, 1.125rem);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .image-row {
+
+        gap: clamp(1rem, 0.5229rem + 2.0356vw, 1.5rem);
+        
+        & img {
+            max-width: clamp(9.21875rem, 8.4733rem + 3.18066vw, 10rem);
+        }
+    }
+
+    .text-block  {
+        & p.t3 {
+            font-size: clamp(0.75rem, 0.6307rem + 0.5089vw, 0.875rem);
+        }
+
+        & h2 {
+            max-width: 14ch;
+        }
+
+        & p.t4 {
+        margin: 0 clamp(0rem, 3.908rem - 8.14249vw, 2rem);
+        }
+    }
 }
