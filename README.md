@@ -91,6 +91,7 @@ Below are variables that need to be solved.
 The two equations we set:
 
 $$x = C_{min} - W_e*y$$
+
 $$x = C_{max} - W_b*y$$
 
 When we solve for **y**, we get:
