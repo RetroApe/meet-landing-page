@@ -83,18 +83,32 @@ html {
 
 @mixin button($padding, $bg-color, $color) {
     padding: $padding;
-    background: $bg-color;
+    background-color: $bg-color;
     color: $color;
     border: none;
     border-radius: 1.8125rem;
+    text-wrap: nowrap;
+
+    transition: background-color 0.5s;
 }
 
 .button-blue {
-    @include button(1rem 2.5rem, $cyan-600, $white)
+    @include button(1rem 2.5rem, $cyan-600, $white);
+
+    & .version {
+        color: $cyan-300;
+    }
+    &:hover {
+        background-color: #71C0D4;
+    }
 }
 
 .button-purple {
-     @include button(1rem 2.5rem, $purple-600, $white)
+     @include button(1rem 2.5rem, $purple-600, $white);
+
+     &:hover {
+        background-color: #B18BDD;
+     }
 }
 
 .number {
@@ -103,6 +117,7 @@ html {
     border: 1px solid $cyan-300;
     border-radius: 50%;
     color: $slate-600;
+    background-color: $white;
 
     display: flex;
     align-items: center;
@@ -321,6 +336,125 @@ main {
 
         & p.t4 {
         margin: 0 clamp(0rem, 3.908rem - 8.14249vw, 2rem);
+        }
+    }
+}
+
+  /*-----*/
+ /* END */
+/*-----*/
+
+
+  /*--------*/
+ /* FOOTER */
+/*--------*/
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & .number {
+        margin-bottom: -1.75rem;
+    }
+}
+
+.green-bg {
+    width: 100%;
+    // background-image: url("/assets/desktop/image-footer.jpg");
+    background-size: cover;
+    background-position: center;
+
+    position: relative;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: clamp(4rem, 0.571rem + 7.1428vw, 7rem) clamp(8.25rem, 6.25rem + 4.1666vw, 10rem);
+    
+
+    & h2 {
+        max-width: 27.8125rem;
+    }
+    & p.t4 {
+        max-width: 22.1875rem;
+        margin: 0 1rem;
+    }
+
+    & span {
+        color: $purple-300;
+    }
+    
+    &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -2;
+        background-image: url("/assets/desktop/image-footer.jpg");
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        background-color: $cyan-600;
+        opacity: 90%;
+        width: 100%;
+        height: 100%;
+    }
+
+    & * {
+        color: $white;
+        margin: 0;
+    }
+
+    & .attribution {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 0 0 0.5rem 0;
+
+        & a {
+            color: #c1cbf0;
+        }
+    }
+
+    
+}
+
+@media screen and (max-width: 1100px) {
+    .green-bg {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 4rem clamp(2rem,  0.0916rem + 8.14249vw, 4rem);
+
+        text-align: center;
+
+        & h2, p.t4 {
+            max-width: none;
+        }
+
+        & h2 {
+            font-size: clamp(2rem,  1.761rem + 1.0178vw, 2.25rem);
+        }
+
+        & p.t4 {
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        &::before {
+            background-image: url("/assets/tablet/image-footer.jpg");
         }
     }
 }
