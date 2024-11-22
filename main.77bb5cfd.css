@@ -178,7 +178,7 @@ header div p.t4 {
     display: none;
   }
   header .img1 {
-    content: url(/image-hero.f3fc1724.png);
+    content: url(image-hero.f3fc1724.png);
     align-self: center;
     margin: 0;
     max-inline-size: 110%;
@@ -310,7 +310,7 @@ footer .number {
   top: 0;
   left: 0;
   z-index: -2;
-  background-image: url("/image-footer.7b36653d.jpg");
+  background-image: url("image-footer.7b36653d.jpg");
   background-size: cover;
   background-position: center;
   width: 100%;
@@ -361,7 +361,7 @@ footer .number {
     margin: 0;
   }
   .green-bg::before {
-    background-image: url("/image-footer.6704c723.jpg");
+    background-image: url("image-footer.6704c723.jpg");
   }
 }
 
